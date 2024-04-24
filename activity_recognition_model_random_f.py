@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Date        : Created on Wed Oct  4 10:54:05 2023
+Date        : Created on Thu Oct  5 12:20:01 2023
 Author      : Lizeth Gonzalez Carabarin
-Description : This file train and test a model to categorize 6 different activities
+Description : This file trains and tests a model to categorize 6 different activities
 based on the measures on accelerometers placed at ankles and writs of multiple
 subjects. The dataset can be found at:
 https://physionet.org/content/accelerometry-walk-climb-drive/1.0.0/
@@ -16,11 +16,10 @@ TODO:
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-# Modelling
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, ConfusionMatrixDisplay
 from sklearn.model_selection import RandomizedSearchCV, train_test_split
-from scipy.stats import randint
+
 
 
 ##############################################################################
@@ -100,4 +99,4 @@ y_pred = rf.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy:", accuracy)
 
-#TODO Look for other estimators
+#TODO Look for other estimators (precision, recall etc)
